@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/07/14 18:52:24 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/07/14 20:38:00 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_fdf
 	int		**matrix;
 	int		zoom;
 	int		color;
+	int		shift_x;
+	int		shift_y;
 	void	*mlx_ptr;
 	void	*win_ptr;
 }	t_fdf;
@@ -50,7 +52,6 @@ int		get_height(char *file_name);
 int		get_width(char *file_name);
 void	fill_matrix(t_fdf *fdf, char *file_name);
 //_____________________/draw\_____________________//
-//void	bresenham_algo(t_fdf *fdf, t_pixels *pixels);
 void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1);
 void	draw(t_fdf *fdf);
 void	isometric_change(float *x, float *y, int z);
