@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/07/13 20:52:02 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/07/14 17:45:07 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ int		get_width(char *file_name);
 void	fill_matrix(t_fdf *fdf, char *file_name);
 //_____________________/draw\_____________________//
 void	bresenham_algo(t_fdf *fdf, t_pixels *pixels);
+
+//-framework OpenGL -framework AppKit
+
 
 #endif

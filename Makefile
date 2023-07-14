@@ -8,7 +8,6 @@ INCS			= -Iincludes
 CC				= cc 
 RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror #-fsanitize=address -g
-FRAEMWORKS		= -framework OpenGL -framework AppKit
 MK				= mkdir -p
 
 all:			$(OBJ_DIR) $(NAME)
@@ -20,7 +19,7 @@ $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADERS)
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(INCS) -lmlx $(FRAMEWORKS) -o $(NAME) $(OBJS) 
+				$(CC) $(CFLAGS) $(INCS) -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(OBJS)
 
 clean:			
 				$(RM) $(OBJ_DIR)
