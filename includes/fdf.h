@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/07/14 20:38:00 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/07/15 20:26:55 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_fdf
 	int		color;
 	int		shift_x;
 	int		shift_y;
+	double	angle;
 	void	*mlx_ptr;
 	void	*win_ptr;
 }	t_fdf;
@@ -54,7 +55,7 @@ void	fill_matrix(t_fdf *fdf, char *file_name);
 //_____________________/draw\_____________________//
 void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1);
 void	draw(t_fdf *fdf);
-void	isometric_change(float *x, float *y, int z);
+void	isometric_change(float *x, float *y, int z, double fdf);
 
 //-framework OpenGL -framework AppKit
 

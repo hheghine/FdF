@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:48:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/07/14 20:13:52 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/07/15 20:27:22 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 #define MAX(a, b) (a > b ? a : b)
 #define MOD(a) (a > 0 ? a : -a)
 
-void	isometric_change(float *x, float *y, int z)
+void	isometric_change(float *x, float *y, int z, double angle)
 {
-	*x = (*x - *y) * cos(0.8);
-	*y = (*x + *y) * sin(0.8) - z;
+	*x = (*x - *y) * cos(angle);
+	*y = (*x + *y) * sin(angle) - z;
 }
 
 void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
@@ -37,8 +37,8 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 	y *= fdf->zoom;
 	y1 *= fdf->zoom;
 //______________________________________3D_
-	isometric_change(&x, &y, z);
-	isometric_change(&x1, &y1, z1);
+	isometric_change(&x, &y, z, fdf->angle);
+	isometric_change(&x1, &y1, z1, fdf->angle);
 //____________________________________shift_
 	x += fdf->shift_x;
 	y += fdf->shift_y;

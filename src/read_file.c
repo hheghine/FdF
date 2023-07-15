@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:40:06 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/07/13 18:37:10 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/07/15 21:01:43 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ void	fill_matrix(t_fdf *fdf, char *file_name)
 		splitted = ft_split(line, ' ');
 		j = -1;
 		while (++j < fdf->width)
+		{
+			//printf("FIRST: %s\n", splitted[j]);
 			fdf->matrix[i][j] = ft_atoi(splitted[j]);
+		}
 		i++;
 		free(line);
 		to_free(splitted);
