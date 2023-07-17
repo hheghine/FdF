@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/07/15 20:26:55 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:11:27 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ void	error(void);
 int		ft_atoi(const char *str);
 //___________________/read_file\___________________//
 void	read_file(t_fdf *fdf, char *file_name);
-int		get_height(char *file_name);
-int		get_width(char *file_name);
+void	get_height_and_width(t_fdf *fdf, char *file_name);
 void	fill_matrix(t_fdf *fdf, char *file_name);
 //_____________________/draw\_____________________//
 void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1);

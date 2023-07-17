@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hbalasan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 17:52:53 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/05/16 20:23:38 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:54:20 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "get_next_line.h"
 
 char	*get_next_line(int fd);
 char	*ft_read_and_save(int fd, char *buffer);
