@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:40:06 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/07/17 20:14:41 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:26:07 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	get_height_and_width(t_fdf *fdf, char *file_name)
 		tmp = ft_split(line, ' ');
 		free(line);
 		width = 0;
-		while (tmp[width])
+		while (tmp[width] && tmp[width][0] != '\n')
 			width++;
 		fdf->width = width;
 		to_free(tmp);
