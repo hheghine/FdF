@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/07/17 20:11:27 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:06:03 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,17 @@
 # include <mlx.h>
 # include <math.h>
 # include "get_next_line.h"
+
+typedef struct	s_data
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		width;
+	int		height;
+}	t_data;
 
 typedef struct s_fdf
 {
@@ -31,6 +42,7 @@ typedef struct s_fdf
 	double	angle;
 	void	*mlx_ptr;
 	void	*win_ptr;
+	t_data	img;
 }	t_fdf;
 
 typedef struct s_pixels
