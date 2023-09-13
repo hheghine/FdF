@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:40:06 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/11 18:21:14 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:24:53 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	read_file(t_fdf *fdf, char *file_name)
 	int	i;
 
 	get_height_and_width(fdf, file_name);
-	// printf ("h: %d, w: %d\n", fdf->height, fdf->width);
+	// printf ("HEIGHT: %d, WIDTH: %d\n", fdf->height, fdf->width);
 	fdf->img.height = 1080;
 	fdf->img.width = 1920;
 	fdf->matrix = (int **)malloc(sizeof(int *) * (fdf->height));

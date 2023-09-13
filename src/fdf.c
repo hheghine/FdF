@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:20 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/11 18:22:46 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:26:07 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	fdf.mlx_ptr = mlx_init();
 	fdf.win_ptr = mlx_new_window(fdf.mlx_ptr, 1000, 1000, "fdf");
 	fdf.img.img = mlx_new_image(fdf.mlx_ptr, 1000, 1000);
-	fdf.img.addr = mlx_get_data_addr(fdf.mlx_ptr, &fdf.img.bits_per_pixel, \
+	fdf.img.addr = mlx_get_data_addr(fdf.img.img, &fdf.img.bits_per_pixel, \
 	&fdf.img.line_length, &fdf.img.endian);
 	fdf.zoom = 20;
 	fdf.angle = 0.8;

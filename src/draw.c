@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:48:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/11 18:23:43 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:26:33 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
-	if (x >= 0 && x < data->width && y >= 0 && y < data->height)
+	if (x >= 0 && x < 1000 && y >= 0 && y < 1000)
 	{
 		// printf ("x: %d, y: %d\n", x, y);
 		dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
@@ -41,6 +41,9 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 	int		z;
 	int		z1;
 
+	fdf->shift_x = 0;
+	fdf->shift_x = 0;
+	
 	z = fdf->matrix[(int)y][(int)x];
 	// printf ("x: %d, y: %d, z: %d\n", (int)x, (int)y, (int)z);
 	z1 = fdf->matrix[(int)y1][(int)x1];
@@ -92,4 +95,5 @@ void	draw(t_fdf *fdf)
 		}
 		y++;
 	}
+	mlx_put_image_to_window(fdf->mlx_ptr, fdf->win_ptr, fdf->img.img, 0, 0);
 }

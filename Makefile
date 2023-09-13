@@ -1,32 +1,44 @@
 NAME			= fdf
-SRC_DIR 		= src
+
+SRC_DIR			= src
+
 SRCS			= $(wildcard $(SRC_DIR)/*.c)
-HEADERS			= $(wildcard includes/*.h)
-OBJ_DIR			= obj
-OBJS			= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
-INCS			= -Iincludes
-CC				= cc 
-RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror -fsanitize=address -g
-MK				= mkdir -p
 
-all:			$(OBJ_DIR) $(NAME)
+HEADER			= $(wildcard includes/*.h)
 
-$(OBJ_DIR): $(SRC_DIR)
-	$(MK) $(OBJ_DIR)
+OBJS			= ${SRCS:.c=.o}
 
-$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADERS)
-	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+INCS			= -I
 
-$(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) $(INCS) -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(OBJS)
+CFLAGS			= -Wall -Wextra -Werror
 
-clean:			
-				$(RM) $(OBJ_DIR)
+MINILIBX		= minilibx_macos
 
-fclean:			clean
-				$(RM) $(NAME)
-				
-re:				fclean all
+FMS				= -framework OpenGL -framework AppKit
 
-.PHONY:			all clean fclean re bonus
+ifeq ($(shell uname -s), Linux)
+	MINILIBX = minilibx-linux
+	FMS = -L $(MINILIBX) -lmlx -lm -lX11 -lXext
+endif
+
+%.o: %.c $(HEADER) Makefile
+	$(CC) $(CFLAGS) $(INCS)$(MINILIBX) -c $< -o $@
+
+all:	mlx ${NAME}
+
+mlx:
+	make -C $(MINILIBX)
+
+${NAME}: ${OBJS}
+	$(CC) $(CFLAGS) $(OBJS) $(FMS) -o ${NAME}
+
+clean:
+	rm -f $(OBJS)
+	make clean -C $(MINILIBX)
+
+fclean: clean
+	rm -f ${NAME}
+
+re: 	fclean all
+
+.PHONY: all clean fclean mlx
