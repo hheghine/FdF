@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:48:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/14 02:07:54 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/14 02:15:58 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	image_start_position(t_fdf *fdf)
 		fdf->zoom = (WIDTH - 400) / width;
 	
 	fdf->shift_x = (WIDTH / 3) + 50;
-	fdf->shift_y = (HEIGHT / 3) - 110;
+	fdf->shift_y = (HEIGHT / 3);
 }
 
 void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)

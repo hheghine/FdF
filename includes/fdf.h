@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/14 02:11:24 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/14 02:40:24 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 #  define UP 65362
 #  define DOWN 65364
 #  define LEFT 65361
-#  define RIGHT 6536653633
+#  define RIGHT 65363
 //
 #  define ZOOM_IN 61
 #  define ZOOM_OUT 45
@@ -103,10 +103,6 @@ void	fill_matrix(t_fdf *fdf, char *file_name);
 void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1);
 void	draw(t_fdf *fdf);
 void	isometric_change(float *x, float *y, int z, double fdf);
-
-// int		key_control(t_fdf *fdf, int	keycode);
-//void	image_start_state(t_fdf *fdf);
-// void    shift_control(t_fdf *fdf, int keycode);
 
 //-framework OpenGL -framework AppKit
 
