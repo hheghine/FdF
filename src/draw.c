@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:48:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/13 22:26:33 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/14 02:07:54 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,22 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	}
 }
 
+void	image_start_position(t_fdf *fdf)
+{
+	float	height;
+	float	width;
+
+	height = fdf->width * sin(fdf->angle) + fdf->height * cos(fdf->angle);
+	width = fdf->width * cos(fdf->angle) + fdf->height * sin(fdf->angle);
+	if (height < width)
+		fdf->zoom = (HEIGHT - 400) / height;
+	else
+		fdf->zoom = (WIDTH - 400) / width;
+	
+	fdf->shift_x = (WIDTH / 3) + 50;
+	fdf->shift_y = (HEIGHT / 3) - 110;
+}
+
 void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 {
 	float	x_step;
@@ -41,8 +57,7 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 	int		z;
 	int		z1;
 
-	fdf->shift_x = 0;
-	fdf->shift_x = 0;
+	image_start_position(fdf);
 	
 	z = fdf->matrix[(int)y][(int)x];
 	// printf ("x: %d, y: %d, z: %d\n", (int)x, (int)y, (int)z);

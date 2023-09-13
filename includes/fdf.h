@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/11 18:06:03 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/14 02:11:24 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,42 @@
 # include <mlx.h>
 # include <math.h>
 # include "get_next_line.h"
+
+# define WIDTH 1000
+# define HEIGHT 700
+
+# ifdef __linux__
+#  define ESC 65307
+//
+#  define UP 65362
+#  define DOWN 65364
+#  define LEFT 65361
+#  define RIGHT 6536653633
+//
+#  define ZOOM_IN 61
+#  define ZOOM_OUT 45
+#  define ZOOM_IN1 119 // W
+#  define ZOOM_OUT1 115 // S
+//
+#  define ANGLE_LEFT 97 // A
+#  define ANGLE_RIGHT 100 // D
+# else
+#  define ESC 53
+//
+#  define UP 126
+#  define DOWN 125
+#  define LEFT 123
+#  define RIGHT 124
+//
+#  define ZOOM_IN 24
+#  define ZOOM_OUT 27
+#  define ZOOM_IN1 13 // W 
+#  define ZOOM_OUT 1 // S
+//
+#  define ANGLE_LEFT 0 // A
+#  define ANGLE_RIGHT 2 // D
+# endif
+
 
 typedef struct	s_data
 {
@@ -68,7 +104,10 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1);
 void	draw(t_fdf *fdf);
 void	isometric_change(float *x, float *y, int z, double fdf);
 
-//-framework OpenGL -framework AppKit
+// int		key_control(t_fdf *fdf, int	keycode);
+//void	image_start_state(t_fdf *fdf);
+// void    shift_control(t_fdf *fdf, int keycode);
 
+//-framework OpenGL -framework AppKit
 
 #endif
