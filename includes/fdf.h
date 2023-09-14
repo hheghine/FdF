@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/14 02:40:24 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/15 00:52:04 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "get_next_line.h"
 
 # define WIDTH 1000
-# define HEIGHT 700
+# define HEIGHT 1000
 
 # ifdef __linux__
 #  define ESC 65307
@@ -103,6 +103,7 @@ void	fill_matrix(t_fdf *fdf, char *file_name);
 void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1);
 void	draw(t_fdf *fdf);
 void	isometric_change(float *x, float *y, int z, double fdf);
+void	image_start_position(t_fdf *fdf);
 
 //-framework OpenGL -framework AppKit
 

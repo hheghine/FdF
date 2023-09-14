@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:20 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/14 02:39:54 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/15 00:51:37 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,13 @@ int	main(int argc, char **argv)
 		error();
 	read_file(&fdf, argv[1]);
 	fdf.mlx_ptr = mlx_init();
-	fdf.win_ptr = mlx_new_window(fdf.mlx_ptr, 1000, 1000, "fdf");
-	fdf.img.img = mlx_new_image(fdf.mlx_ptr, 1000, 1000);
+	fdf.win_ptr = mlx_new_window(fdf.mlx_ptr, WIDTH, HEIGHT, argv[1]);
+	fdf.img.img = mlx_new_image(fdf.mlx_ptr, WIDTH, HEIGHT);
 	fdf.img.addr = mlx_get_data_addr(fdf.img.img, &fdf.img.bits_per_pixel, \
 	&fdf.img.line_length, &fdf.img.endian);
-	fdf.zoom = 20;
+	//fdf.zoom = 20;
 	fdf.angle = 0.8;
+	image_start_position(&fdf);
 
 	// bresenham_algo(&fdf);
 	draw(&fdf);

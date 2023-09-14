@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:48:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/14 02:15:58 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/15 00:50:21 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
-	if (x >= 0 && x < 1000 && y >= 0 && y < 1000)
+	if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT)
 	{
 		// printf ("x: %d, y: %d\n", x, y);
 		dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
@@ -57,7 +57,6 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 	int		z;
 	int		z1;
 
-	image_start_position(fdf);
 	
 	z = fdf->matrix[(int)y][(int)x];
 	// printf ("x: %d, y: %d, z: %d\n", (int)x, (int)y, (int)z);
