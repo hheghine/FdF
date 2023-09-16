@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/16 04:53:49 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/16 06:29:30 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,11 @@ void	isometric_change(float *x, float *y, int z, double fdf);
 void	image_start_position(t_fdf *fdf);
 //void	what_color_is_my_stupid_pixel(t_fdf *fdf, float x1, float x2);
 int interpolate(int color1, int color2, float fraction);
+
+char	*ft_strrchr(const char *s, int c);
+int 	strcmp(const char *x, const char *y);
+int		input_check(int argc, char *file);
+void	ft_error(char *str);
 
 //-framework OpenGL -framework AppKit
 

@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:40:06 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/13 22:24:53 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/16 06:38:27 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	calculate(t_fdf *fdf, int fd, char **line, int *width)
 	*width = 0;
 	while (tmp[*width] && tmp[*width][0] != '\n')
 		*width += 1;
+	if (fdf->width && fdf->width != *width)
+            ft_error("Fdf Error: Uneven lines in file\n");
 	fdf->width = *width;
 	to_free(tmp);
 	return (0);
@@ -41,7 +43,7 @@ void	get_height_and_width(t_fdf *fdf, char *file_name)
 
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
-		error();
+		ft_error("Fdf Error: Bad file descriptor\n");
 	fdf->height = 0;
 	fdf->width = 0;
 	width = 0;
@@ -80,7 +82,7 @@ void	fill_matrix(t_fdf *fdf, char *file_name)
 
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
-		error();
+		ft_error("Fdf Error: Bad file descriptor\n");
 	i = 0;
 	while (1)
 		if (fill_elem(fdf, fd, &line, &i))

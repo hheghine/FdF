@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:20 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/16 05:01:08 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/16 06:22:33 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,10 @@ int	main(int argc, char **argv)
 	t_fdf		fdf;
 	// t_pixels	pixels;
 
-	if (argc != 2)
-		error();
+	if (input_check(argc, argv[1]))
+		return (1);
+	// if (read_file(&fdf, argv[1]))
+	// 	return (1);
 	read_file(&fdf, argv[1]);
 	fdf.mlx_ptr = mlx_init();
 	fdf.win_ptr = mlx_new_window(fdf.mlx_ptr, WIDTH, HEIGHT, argv[1]);
