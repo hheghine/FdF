@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/15 00:52:04 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/16 04:53:49 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@
 
 # define WIDTH 1000
 # define HEIGHT 1000
+
+#define YELLOW 0x00FFFF66 
+#define BLUE 0x0099CCFF
+#define GREEN 0x0099FF33
+#define VIOLET 0x00CC99FF
 
 # ifdef __linux__
 #  define ESC 65307
@@ -53,7 +58,6 @@
 #  define ANGLE_LEFT 0 // A
 #  define ANGLE_RIGHT 2 // D
 # endif
-
 
 typedef struct	s_data
 {
@@ -104,6 +108,8 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1);
 void	draw(t_fdf *fdf);
 void	isometric_change(float *x, float *y, int z, double fdf);
 void	image_start_position(t_fdf *fdf);
+//void	what_color_is_my_stupid_pixel(t_fdf *fdf, float x1, float x2);
+int interpolate(int color1, int color2, float fraction);
 
 //-framework OpenGL -framework AppKit
 
