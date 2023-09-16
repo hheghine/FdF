@@ -2,7 +2,8 @@
 
 **FdF** is a simple 3D height-map renderer project. It enables the rendering of models, where the color of each point is determined by its relative height within the map. The project includes features like model rotation, camera control for zoom and translation, as well as support for color gradients.
 
-![Screenshot from 2023-09-16 05-09-21](https://github.com/hheghine/FdF/assets/119530584/856f9fbf-63d0-46e2-98fd-7e31590fe717)
+![Screenshot from 2023-09-16 05-32-03](https://github.com/hheghine/FdF/assets/119530584/c6394ce5-9848-40a7-9e35-50a68dffe7ba)
+
 
 
 ## Features
