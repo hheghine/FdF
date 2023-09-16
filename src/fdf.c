@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:20 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/15 00:51:37 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/16 05:01:08 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int	key_hook(int keycode, t_fdf *fdf)
 	if (keycode == LEFT)
 		fdf->shift_x -= 10;
 	if (keycode == ZOOM_IN)
-		fdf->zoom += 5;
+		fdf->zoom += 1;
 	if (keycode == ZOOM_OUT)
-		fdf->zoom -= 5;
+		fdf->zoom -= 1;
 	if (keycode == ANGLE_LEFT)
 		fdf->angle -= 0.05;
 	if (keycode == ANGLE_RIGHT)
