@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:48:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/17 20:16:51 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/18 03:22:16 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 	if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT)
 	{
-		// printf ("x: %d, y: %d\n", x, y);
 		dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 		*(unsigned int*)dst = color;
 	}
@@ -59,7 +58,6 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 
 	
 	z = fdf->matrix[(int)y][(int)x];
-	// printf ("x: %d, y: %d, z: %d\n", (int)x, (int)y, (int)z);
 	z1 = fdf->matrix[(int)y1][(int)x1];
 //____________________________________zoom_
 	x *= fdf->zoom;
@@ -67,18 +65,31 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 	y *= fdf->zoom;
 	y1 *= fdf->zoom;
 //______________________________________3D_
-	isometric_change(&x, &y, z, fdf->angle);
-	isometric_change(&x1, &y1, z1, fdf->angle);
+	if (fdf->isometric_flag > 0)
+	{
+		isometric_change(&x, &y, z, fdf->angle);
+		isometric_change(&x1, &y1, z1, fdf->angle);
+	}
 //____________________________________shift_
 	x += fdf->shift_x;
 	y += fdf->shift_y;
 	x1 += fdf->shift_x;
 	y1 += fdf->shift_y;
 //____________________________________color_
-	if (fdf->color_flag > 0)
-		fdf->color = interpolate(VIOLET, BLUE, MOD(y1 - y));
+	if (fdf->isometric_flag > 0)
+	{
+		if (fdf->color_flag > 0)
+			fdf->color = interpolate(VIOLET, BLUE, MOD(y1 - y));
+		else
+			fdf->color = interpolate(ROSE, VIOLET, MOD(y1 - y));
+	}
 	else
-		fdf->color = interpolate(ROSE, VIOLET, MOD(y1 - y));
+	{
+		if (fdf->color_flag > 0)
+			fdf->color = interpolate(VIOLET, BLUE, MOD(z1 - z));
+		else
+			fdf->color = interpolate(ROSE, VIOLET, MOD(z1 - z));
+	}
 
 	x_step = x1 - x;
 	y_step = y1 - y;

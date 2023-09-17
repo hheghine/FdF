@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:20 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/17 20:29:17 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/18 03:21:00 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	key_hook(int keycode, t_fdf *fdf)
 		fdf->angle += 0.05;
 	if (keycode == COLOR)
 		fdf->color_flag *= -1;
+	if (keycode == TOP)
+		fdf->isometric_flag *= -1;
 	
 	image_start_state(fdf);
 	draw(fdf);
@@ -72,6 +74,7 @@ int	main(int argc, char **argv)
 
 	fdf.angle = 0.8;
 	fdf.color_flag = 1;
+	fdf.isometric_flag = 1;
 	image_start_position(&fdf);
 	image_start_state(&fdf);
 	
