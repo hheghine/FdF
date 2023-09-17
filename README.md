@@ -11,17 +11,21 @@
 ### Current Features
 
 - Simple file format definition using an array of space-separated integers.
-- 3D rotations achievable with the mouse.
-- Camera controls, including zoom and translation.
-- Utilization of pretty color gradients.
-- Double-buffering for smooth rendering.
-- Line clipping for improved visual quality.
+- transitions `keys: ↑/↓/←/→`
+- zoom `keys: +/-/W/S`
+- 3D rotations `keys: A/D`
+- Utilization of pretty color gradients, color change `key: C`.
+
+### Compatibility
+
+- MacOs
+- Linux
 
 ## Compiling and Running
 
 1. Compile the executable by running `make`. The resulting executable will be generated.
 2. Run the program using `./fdf [map]`, where `[map]` should be replaced with the path to the map file you wish to visualize.
-3. A set of sample maps can be found in the `test_maps` directory. Notably, `test_maps/42.fdf` is a popular choice for testing.
+3. A set of sample maps can be found in the `maps` directory. Notably, `maps/42.fdf` is a popular choice for testing.
 
 ## Conclusion
 
