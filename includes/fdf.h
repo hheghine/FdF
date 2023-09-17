@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/16 06:29:30 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/17 20:09:09 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@
 #define BLUE 0x0099CCFF
 #define GREEN 0x0099FF33
 #define VIOLET 0x00CC99FF
+#define CYAN 0x0000FFFF
+#define ROSE 0x00FF00CC	
+#define DARKBLUE 0x00003399
 
 # ifdef __linux__
 #  define ESC 65307
@@ -40,6 +43,7 @@
 #  define ZOOM_IN1 119 // W
 #  define ZOOM_OUT1 115 // S
 //
+#  define COLOR 99 // C
 #  define ANGLE_LEFT 97 // A
 #  define ANGLE_RIGHT 100 // D
 # else
@@ -75,8 +79,9 @@ typedef struct s_fdf
 	int		width;
 	int		height;
 	int		**matrix;
-	int		zoom;
+	float	zoom;
 	int		color;
+	int		color_flag;
 	int		shift_x;
 	int		shift_y;
 	double	angle;

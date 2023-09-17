@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:20 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/16 06:22:33 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/17 20:29:17 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,20 @@ int	key_hook(int keycode, t_fdf *fdf)
 		fdf->shift_x += 10;
 	if (keycode == LEFT)
 		fdf->shift_x -= 10;
-	if (keycode == ZOOM_IN)
-		fdf->zoom += 1;
-	if (keycode == ZOOM_OUT)
-		fdf->zoom -= 1;
+	if (keycode == ZOOM_IN || keycode == ZOOM_IN1)
+		if (fdf->zoom <= 1000)
+			fdf->zoom += 0.2;
+	if (keycode == ZOOM_OUT || keycode == ZOOM_OUT1)
+		if (fdf->zoom >= 1)
+			fdf->zoom -= 0.2;
 	if (keycode == ANGLE_LEFT)
 		fdf->angle -= 0.05;
 	if (keycode == ANGLE_RIGHT)
 		fdf->angle += 0.05;
+	if (keycode == COLOR)
+		fdf->color_flag *= -1;
+	
 	image_start_state(fdf);
-	//mlx_clear_window(fdf->mlx_ptr, fdf->win_ptr);
 	draw(fdf);
 	return (0);
 }
@@ -55,24 +59,22 @@ int	key_hook(int keycode, t_fdf *fdf)
 int	main(int argc, char **argv)
 {
 	t_fdf		fdf;
-	// t_pixels	pixels;
 
 	if (input_check(argc, argv[1]))
 		return (1);
-	// if (read_file(&fdf, argv[1]))
-	// 	return (1);
+
 	read_file(&fdf, argv[1]);
 	fdf.mlx_ptr = mlx_init();
 	fdf.win_ptr = mlx_new_window(fdf.mlx_ptr, WIDTH, HEIGHT, argv[1]);
 	fdf.img.img = mlx_new_image(fdf.mlx_ptr, WIDTH, HEIGHT);
 	fdf.img.addr = mlx_get_data_addr(fdf.img.img, &fdf.img.bits_per_pixel, \
 	&fdf.img.line_length, &fdf.img.endian);
-	//fdf.zoom = 20;
-	fdf.angle = 0.8;
-	image_start_position(&fdf);
 
-	// bresenham_algo(&fdf);
-	draw(&fdf);
+	fdf.angle = 0.8;
+	fdf.color_flag = 1;
+	image_start_position(&fdf);
+	image_start_state(&fdf);
+	
 	mlx_hook(fdf.win_ptr, 2, 1l, key_hook, &fdf);
 	mlx_loop(fdf.mlx_ptr);
 }

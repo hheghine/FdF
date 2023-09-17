@@ -21,7 +21,7 @@
 
 1. Compile the executable by running `make`. The resulting executable will be generated.
 2. Run the program using `./fdf [map]`, where `[map]` should be replaced with the path to the map file you wish to visualize.
-3. A set of sample maps can be found in the `maps` directory. Notably, `maps/42.fdf` is a popular choice for testing.
+3. A set of sample maps can be found in the `test_maps` directory. Notably, `test_maps/42.fdf` is a popular choice for testing.
 
 ## Conclusion
 

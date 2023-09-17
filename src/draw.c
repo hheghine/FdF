@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:48:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/16 04:54:16 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/17 20:16:51 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,10 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 	x1 += fdf->shift_x;
 	y1 += fdf->shift_y;
 //____________________________________color_
-	//fdf->color = (z > 0 || z1 > 0) ? 0x00FFFF66 : 0x00CC00FF;
-	fdf->color = interpolate(VIOLET, BLUE, MOD(y1 - y));
+	if (fdf->color_flag > 0)
+		fdf->color = interpolate(VIOLET, BLUE, MOD(y1 - y));
+	else
+		fdf->color = interpolate(ROSE, VIOLET, MOD(y1 - y));
 
 	x_step = x1 - x;
 	y_step = y1 - y;
