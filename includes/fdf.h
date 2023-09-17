@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/17 20:09:09 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/17 20:48:24 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@
 #  define ZOOM_OUT1 115 // S
 //
 #  define COLOR 99 // C
+//
 #  define ANGLE_LEFT 97 // A
 #  define ANGLE_RIGHT 100 // D
 # else
@@ -58,6 +59,8 @@
 #  define ZOOM_OUT 27
 #  define ZOOM_IN1 13 // W 
 #  define ZOOM_OUT 1 // S
+//
+#define COLOR 8 // C
 //
 #  define ANGLE_LEFT 0 // A
 #  define ANGLE_RIGHT 2 // D
