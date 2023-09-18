@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:48:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/18 04:11:26 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/18 21:13:47 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,10 @@ void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1)
 	
 	z = fdf->matrix[(int)y][(int)x];
 	z1 = fdf->matrix[(int)y1][(int)x1];
+	if (z != 0)
+		z += fdf->z_shift;
+	if (z1 != 0)
+		z1 += fdf->z_shift;
 //____________________________________zoom_
 	x *= fdf->zoom;
 	x1 *= fdf->zoom;

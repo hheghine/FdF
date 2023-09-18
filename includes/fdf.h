@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/18 04:03:20 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/18 21:16:01 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@
 //
 #  define ZOOM_IN 61
 #  define ZOOM_OUT 45
-#  define ZOOM_IN1 119 // W
-#  define ZOOM_OUT1 115 // S
+#  define Z_UP 119 // W
+#  define Z_DOWN 115 // S
 //
 #  define ANGLE_LEFT 97 // A
 #  define ANGLE_RIGHT 100 // D
@@ -59,8 +59,8 @@
 //
 #  define ZOOM_IN 24
 #  define ZOOM_OUT 27
-#  define ZOOM_IN1 13 // W 
-#  define ZOOM_OUT 1 // S
+#  define Z_UP 13 // W 
+#  define Z_DOWN 1 // S
 //
 #  define ANGLE_LEFT 0 // A
 #  define ANGLE_RIGHT 2 // D
@@ -90,6 +90,7 @@ typedef struct s_fdf
 	int		color;
 	int		color_flag;
 	int		isometric_flag;
+	int		z_shift;
 	int		shift_x;
 	int		shift_y;
 	double	angle;

@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:20 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/18 04:01:22 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/18 21:16:24 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int	key_hook(int keycode, t_fdf *fdf)
 		fdf->shift_x += 10;
 	if (keycode == LEFT)
 		fdf->shift_x -= 10;
-	if (keycode == ZOOM_IN || keycode == ZOOM_IN1)
+	if (keycode == ZOOM_IN ) //|| keycode == ZOOM_IN1)
 		if (fdf->zoom <= 1000)
 			fdf->zoom += 0.2;
-	if (keycode == ZOOM_OUT || keycode == ZOOM_OUT1)
+	if (keycode == ZOOM_OUT ) //|| keycode == ZOOM_OUT1)
 		if (fdf->zoom >= 1)
 			fdf->zoom -= 0.2;
 	if (keycode == ANGLE_LEFT)
@@ -52,6 +52,10 @@ int	key_hook(int keycode, t_fdf *fdf)
 		fdf->color_flag *= -1;
 	if (keycode == TOP)
 		fdf->isometric_flag *= -1;
+	if (keycode == Z_UP)
+		fdf->z_shift += 5;
+	if (keycode == Z_DOWN)
+		fdf->z_shift -= 5;
 	
 	image_start_state(fdf);
 	draw(fdf);
@@ -75,6 +79,7 @@ int	main(int argc, char **argv)
 	fdf.angle = 0.8;
 	fdf.color_flag = 1;
 	fdf.isometric_flag = 1;
+	fdf.z_shift = 0;
 	image_start_position(&fdf);
 	image_start_state(&fdf);
 	
