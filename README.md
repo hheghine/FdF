@@ -32,10 +32,19 @@
 
 **FdF** is a straightforward 3D height-map renderer that allows users to visualize and interact with models. It offers rotation, camera control, color gradients, and various planned features to enhance the experience further. By compiling and running the program, you can explore the provided sample maps and create your own height-map visualizations.
 
+
+| 3D View                                                                                      |  Top View                                                                                        |
+|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| ![3d](https://github.com/hheghine/FdF/assets/119530584/f6f1c0ab-b53d-4c66-863f-bfdde53e2935) | ![Top](https://github.com/hheghine/FdF/assets/119530584/7f055794-5c23-46f3-8b2a-17c579860042)    |
+
 ![Screenshot from 2023-09-16 05-45-08](https://github.com/hheghine/FdF/assets/119530584/b139951b-70fc-4487-9683-94fdacb403ae)
+
+![Screenshot from 2023-09-18 04-21-22](https://github.com/hheghine/FdF/assets/119530584/db548e76-bb55-4422-983a-c8e39656f96d)
 
 ![Screenshot from 2023-09-16 05-36-36](https://github.com/hheghine/FdF/assets/119530584/e3abf443-22b4-4908-b10a-da46309aacf5)
 
-![Screenshot from 2023-09-16 05-49-15](https://github.com/hheghine/FdF/assets/119530584/ce0a7c85-d1a4-453a-8c76-d9c307e07e56)
+
+
+
 
 
