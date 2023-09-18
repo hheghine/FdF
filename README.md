@@ -14,8 +14,8 @@
 - `keys: ↑/↓/←/→` transitions
 - `keys: +/-/W/S` zoom
 - `keys: A/D` 3D rotations 
-- `key: C` Utilization of pretty color gradients, color change 
-- `key: T` Top view 
+- `key: C` utilization of pretty color gradients, color change 
+- `key: T` top view 
 
 ### Compatibility
 
