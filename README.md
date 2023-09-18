@@ -12,8 +12,9 @@
 
 - Simple file format definition using an array of space-separated integers.
 - `keys: ↑/↓/←/→` transitions
-- `keys: +/-/W/S` zoom
+- `keys: +/-` zoom
 - `keys: A/D` 3D rotations 
+- `keys: W/S` move the z axis
 - `key: C` utilization of pretty color gradients, color change 
 - `key: T` top view 
 
