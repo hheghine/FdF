@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/18 03:19:32 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/18 04:03:20 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <math.h>
 # include "get_next_line.h"
 
-# define WIDTH 1000
+# define WIDTH 1200
 # define HEIGHT 1000
 
 #define YELLOW 0x00FFFF66 
@@ -28,7 +28,7 @@
 #define VIOLET 0x00CC99FF
 #define CYAN 0x0000FFFF
 #define ROSE 0x00FF00CC	
-#define DARKBLUE 0x00003399
+#define DARKBLUE 0x006633CC
 
 # ifdef __linux__
 #  define ESC 65307

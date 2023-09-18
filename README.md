@@ -11,11 +11,11 @@
 ### Current Features
 
 - Simple file format definition using an array of space-separated integers.
-- transitions `keys: ↑/↓/←/→`
-- zoom `keys: +/-/W/S`
-- 3D rotations `keys: A/D`
-- Utilization of pretty color gradients, color change `key: C`
-- Top view `key: T`
+- `keys: ↑/↓/←/→` transitions
+- `keys: +/-/W/S` zoom
+- `keys: A/D` 3D rotations 
+- `key: C` Utilization of pretty color gradients, color change 
+- `key: T` Top view 
 
 ### Compatibility
 
