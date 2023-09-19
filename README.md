@@ -40,7 +40,7 @@
 
 | Z_UP                                                                                         | Z_DOWN                                                                                           |
 |----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-|![z_up](https://github.com/hheghine/FdF/assets/119530584/392745bf-87f1-4e5b-a388-455da48b6e07)|![z_down](https://github.com/hheghine/FdF/assets/119530584/0d8700d6-ce3c-4df1-9c02-8f0c37395417)  |
+|![z_up](https://github.com/hheghine/FdF/assets/119530584/c2dee0ab-7d70-463b-8032-e7eb4790adc6)|![z_down](https://github.com/hheghine/FdF/assets/119530584/df20f1e1-5cde-4130-80c0-bd1c1623cc30)  |
 
 
 ![Screenshot from 2023-09-16 05-45-08](https://github.com/hheghine/FdF/assets/119530584/b139951b-70fc-4487-9683-94fdacb403ae)
