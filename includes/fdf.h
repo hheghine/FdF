@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/18 21:16:01 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/19 19:53:40 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,55 +81,67 @@ typedef struct	s_data
 	int		height;
 }	t_data;
 
-typedef struct s_fdf
-{
-	int		width;
-	int		height;
-	int		**matrix;
-	float	zoom;
-	int		color;
-	int		color_flag;
-	int		isometric_flag;
-	int		z_shift;
-	int		shift_x;
-	int		shift_y;
-	double	angle;
-	void	*mlx_ptr;
-	void	*win_ptr;
-	t_data	img;
-}	t_fdf;
-
 typedef struct s_pixels
 {
-	float	x;
-	float	x1;
-	float	y;
-	float	y1;
+	int	x;
+	int	y;
 }	t_pixels;
 
+typedef struct s_fdf
+{
+	int			width;
+	int			height;
+	int			**matrix;
+	float		zoom;
+	int			color;
+	int			color_flag;
+	int			isometric_flag;
+	int			z_shift;
+	int			shift_x;
+	int			shift_y;
+	double		angle;
+	void		*mlx_ptr;
+	void		*win_ptr;
+	t_pixels	pixels;
+	t_data		img;
+}	t_fdf;
+
+
+
+//__________________/fdf_error.c/________________//
+void	ft_error(char *str);
+int		input_check(int argc, char *file);
+//___________________/init.c/_____________________//
+void    minilibx_init(t_fdf *fdf, char *win_name);
+void    fdf_init(t_fdf *fdf);
+void	image_init(t_fdf *fdf);
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+//_________________/controls.c/__________________//
+int		key_hook(int keycode, t_fdf *fdf);
 //___________________/ft_split\___________________//
 char	**ft_split(char const *s, char c);
 //___________________/fdf_utils\___________________//
 void	to_free(char **str);
-void	error(void);
+char	*ft_strrchr(const char *s, int c);
+int 	strcmp(const char *x, const char *y);
 int		ft_atoi(const char *str);
 //___________________/read_file\___________________//
 void	read_file(t_fdf *fdf, char *file_name);
 void	get_height_and_width(t_fdf *fdf, char *file_name);
 void	fill_matrix(t_fdf *fdf, char *file_name);
 //_____________________/draw\_____________________//
-void	bresenham_algo(t_fdf *fdf, float x, float y, float x1, float y1);
 void	draw(t_fdf *fdf);
+void	bresenham(t_fdf *fdf, float x, float y, float x1, float y1);
 void	isometric_change(float *x, float *y, int z, double fdf);
-void	image_start_position(t_fdf *fdf);
-//void	what_color_is_my_stupid_pixel(t_fdf *fdf, float x1, float x2);
-int interpolate(int color1, int color2, float fraction);
+int 	interpolate(int color1, int color2, float fraction);
+// void	bresenham(t_fdf *fdf, float x1, float y1);
 
-char	*ft_strrchr(const char *s, int c);
-int 	strcmp(const char *x, const char *y);
-int		input_check(int argc, char *file);
-void	ft_error(char *str);
 
+
+
+
+
+void	to_free(char **str);
 //-framework OpenGL -framework AppKit
 
 #endif

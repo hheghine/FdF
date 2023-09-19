@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fdf_utils.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 20:30:16 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/16 06:38:08 by heghine          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/fdf.h"
 
 void	to_free(char **str)
@@ -22,17 +10,35 @@ void	to_free(char **str)
 	free(str);
 }
 
-void	ft_error(char *str)
+char	*ft_strrchr(const char *s, int c)
 {
-	//perror(str);
-	write (2, str, ft_strlen(str));
-	exit(EXIT_FAILURE);
+	const char	*last;
+	size_t		s_size;
+
+	last = NULL;
+	if (!s)
+		return (NULL);
+	s_size = ft_strlen(s) + 1;
+	while (s_size--)
+	{
+		if (*s == (char)c)
+			last = s;
+		s++;
+	}
+	return ((char *)last);
 }
 
-void	error(void)
+int strcmp(const char *x, const char *y)
 {
-	perror("FdF ERROR:");
-	exit(EXIT_FAILURE);
+    while (*x)
+    {
+        if (*x != *y) {
+            break;
+        }
+        x++;
+        y++;
+    }
+    return *(const unsigned char*)x - *(const unsigned char*)y;
 }
 
 int	ft_atoi(const char *str)

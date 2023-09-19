@@ -1,5 +1,11 @@
 #include "../includes/fdf.h"
 
+void	ft_error(char *str)
+{
+	write (2, str, ft_strlen(str));
+	exit(EXIT_FAILURE);
+}
+
 int	format_check(char *file)
 {
 	file = ft_strrchr(file, '.');

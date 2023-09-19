@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_file.c                                        :+:      :+:    :+:   */
+/*   fdf_read.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:40:06 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/16 06:38:27 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/19 19:22:57 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-int	calculate(t_fdf *fdf, int fd, char **line, int *width)
+int	height_and_width(t_fdf *fdf, int fd, char **line, int *width)
 {
 	char	**tmp;	
 
@@ -48,12 +48,12 @@ void	get_height_and_width(t_fdf *fdf, char *file_name)
 	fdf->width = 0;
 	width = 0;
 	while (1)
-		if (calculate(fdf, fd, &line, &width))
+		if (height_and_width(fdf, fd, &line, &width))
 			break ;
 	close (fd);
 }
 
-int	fill_elem(t_fdf *fdf, int fd, char **line, int *i)
+int	actually_fill(t_fdf *fdf, int fd, char **line, int *i)
 {
 	char	**splitted;
 	int		j;
@@ -85,7 +85,7 @@ void	fill_matrix(t_fdf *fdf, char *file_name)
 		ft_error("Fdf Error: Bad file descriptor\n");
 	i = 0;
 	while (1)
-		if (fill_elem(fdf, fd, &line, &i))
+		if (actually_fill(fdf, fd, &line, &i))
 			break ;
 	close(fd);
 }
@@ -95,9 +95,6 @@ void	read_file(t_fdf *fdf, char *file_name)
 	int	i;
 
 	get_height_and_width(fdf, file_name);
-	// printf ("HEIGHT: %d, WIDTH: %d\n", fdf->height, fdf->width);
-	fdf->img.height = 1080;
-	fdf->img.width = 1920;
 	fdf->matrix = (int **)malloc(sizeof(int *) * (fdf->height));
 	i = -1;
 	while (++i < fdf->height)
