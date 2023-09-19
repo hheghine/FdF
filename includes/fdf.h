@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/19 19:53:40 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/20 02:24:07 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@
 #  define COLOR 99 // C
 //
 #  define TOP 116 // T
+//
+//
 # else
 #  define ESC 53
 //
@@ -69,6 +71,17 @@
 //
 #  define TOP 17 // T
 # endif
+//
+
+typedef struct	s_rgb
+{
+	unsigned char   r1;
+    unsigned char   r2;
+    unsigned char   g1;
+    unsigned char   g2;
+    unsigned char   b1;
+    unsigned char   b2;
+}	t_rgb;
 
 typedef struct	s_data
 {
@@ -81,67 +94,72 @@ typedef struct	s_data
 	int		height;
 }	t_data;
 
-typedef struct s_pixels
+typedef struct	s_coordinates
+{
+	float	x;
+	float	y;
+	float	x1;
+	float	y1;
+	int		z;
+	int		z1;
+	float	x_step;
+	float	y_step;
+}	t_coordinates;
+
+typedef struct s_dots
 {
 	int	x;
 	int	y;
-}	t_pixels;
+}	t_dots;
 
 typedef struct s_fdf
 {
-	int			width;
-	int			height;
-	int			**matrix;
-	float		zoom;
-	int			color;
-	int			color_flag;
-	int			isometric_flag;
-	int			z_shift;
-	int			shift_x;
-	int			shift_y;
-	double		angle;
-	void		*mlx_ptr;
-	void		*win_ptr;
-	t_pixels	pixels;
-	t_data		img;
+	int		width;
+	int		height;
+	int		**matrix;
+	float	zoom;
+	int		color;
+	int		color_flag;
+	int		isometric_flag;
+	int		z_shift;
+	int		shift_x;
+	int		shift_y;
+	double	angle;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	t_dots	dots;
+	t_data	img;
 }	t_fdf;
 
-
-
-//__________________/fdf_error.c/________________//
+//_________________________/fdf_error.c/_________________________//
 void	ft_error(char *str);
 int		input_check(int argc, char *file);
-//___________________/init.c/_____________________//
+//_________________________/read_file/_________________________//
+void	read_file(t_fdf *fdf, char *file_name);
+void	get_height_and_width(t_fdf *fdf, char *file_name);
+void	fill_matrix(t_fdf *fdf, char *file_name);
+//_________________________/init.c/_________________________//
 void    minilibx_init(t_fdf *fdf, char *win_name);
 void    fdf_init(t_fdf *fdf);
 void	image_init(t_fdf *fdf);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-//_________________/controls.c/__________________//
+//_________________________/controls.c/_________________________//
 int		key_hook(int keycode, t_fdf *fdf);
-//___________________/ft_split\___________________//
+//_________________________/ft_split/_________________________//
 char	**ft_split(char const *s, char c);
-//___________________/fdf_utils\___________________//
+//_________________________/draw/_________________________//
+void	draw(t_fdf *fdf);
+//___________________/bresenham.c/__________________//
+void	bresenham(t_fdf *fdf, float x1, float y1);
+//___________________/picasso.c/____________________//
+void    picasso(t_fdf *fdf, t_coordinates *xyz);
+//_________________________/fdf_utils.c/_________________________//
 void	to_free(char **str);
 char	*ft_strrchr(const char *s, int c);
 int 	strcmp(const char *x, const char *y);
 int		ft_atoi(const char *str);
-//___________________/read_file\___________________//
-void	read_file(t_fdf *fdf, char *file_name);
-void	get_height_and_width(t_fdf *fdf, char *file_name);
-void	fill_matrix(t_fdf *fdf, char *file_name);
-//_____________________/draw\_____________________//
-void	draw(t_fdf *fdf);
-void	bresenham(t_fdf *fdf, float x, float y, float x1, float y1);
-void	isometric_change(float *x, float *y, int z, double fdf);
-int 	interpolate(int color1, int color2, float fraction);
-// void	bresenham(t_fdf *fdf, float x1, float y1);
-
-
-
-
-
-
-void	to_free(char **str);
-//-framework OpenGL -framework AppKit
+//_________________________/fdf_utils2.c/_________________________//
+int		MAX(int a, int b);
+int		MOD(int a);
 
 #endif
