@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:40:06 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/19 19:22:57 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/20 20:00:53 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	height_and_width(t_fdf *fdf, int fd, char **line, int *width)
 	while (tmp[*width] && tmp[*width][0] != '\n')
 		*width += 1;
 	if (fdf->width && fdf->width != *width)
-            ft_error("Fdf Error: Uneven lines in file\n");
+		ft_error("Fdf Error: Uneven lines in file\n");
 	fdf->width = *width;
 	to_free(tmp);
 	return (0);

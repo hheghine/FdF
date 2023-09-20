@@ -37,11 +37,11 @@ int	file_check(char *file)
 int	input_check(int argc, char *file)
 {
 	if (argc != 2)
-        ft_error("Fdf Error: Wrong arguments\n");
+		ft_error("Fdf Error: Wrong arguments\n");
 	if (format_check(file))
-        ft_error("Fdf Error: Wrong file format\n");
+		ft_error("Fdf Error: Wrong file format\n");
 	if (file_check(file))
-        ft_error("Fdf Error: Empty or invalid file\n");
+		ft_error("Fdf Error: Empty or invalid file\n");
 
 	return (0);
 }

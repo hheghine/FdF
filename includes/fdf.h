@@ -6,7 +6,7 @@
 /*   By: heghine <heghine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/20 02:24:07 by heghine          ###   ########.fr       */
+/*   Updated: 2023/09/20 19:58:12 by heghine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@
 
 typedef struct	s_rgb
 {
-	unsigned char   r1;
-    unsigned char   r2;
-    unsigned char   g1;
-    unsigned char   g2;
-    unsigned char   b1;
-    unsigned char   b2;
+	unsigned char	r1;
+	unsigned char	r2;
+	unsigned char	g1;
+	unsigned char	g2;
+	unsigned char	b1;
+	unsigned char	b2;
 }	t_rgb;
 
 typedef struct	s_data
@@ -139,8 +139,8 @@ void	read_file(t_fdf *fdf, char *file_name);
 void	get_height_and_width(t_fdf *fdf, char *file_name);
 void	fill_matrix(t_fdf *fdf, char *file_name);
 //_________________________/init.c/_________________________//
-void    minilibx_init(t_fdf *fdf, char *win_name);
-void    fdf_init(t_fdf *fdf);
+void	minilibx_init(t_fdf *fdf, char *win_name);
+void	fdf_init(t_fdf *fdf);
 void	image_init(t_fdf *fdf);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 //_________________________/controls.c/_________________________//
@@ -152,7 +152,7 @@ void	draw(t_fdf *fdf);
 //___________________/bresenham.c/__________________//
 void	bresenham(t_fdf *fdf, float x1, float y1);
 //___________________/picasso.c/____________________//
-void    picasso(t_fdf *fdf, t_coordinates *xyz);
+void	picasso(t_fdf *fdf, t_coordinates *xyz);
 //_________________________/fdf_utils.c/_________________________//
 void	to_free(char **str);
 char	*ft_strrchr(const char *s, int c);

@@ -30,15 +30,14 @@ char	*ft_strrchr(const char *s, int c)
 
 int strcmp(const char *x, const char *y)
 {
-    while (*x)
-    {
-        if (*x != *y) {
-            break;
-        }
-        x++;
-        y++;
-    }
-    return *(const unsigned char*)x - *(const unsigned char*)y;
+	while (*x)
+	{
+		if (*x != *y) 
+			break;
+		x++;
+		y++;
+	}
+	return *(const unsigned char*)x - *(const unsigned char*)y;
 }
 
 int	ft_atoi(const char *str)

@@ -21,11 +21,17 @@ void	image_init(t_fdf *fdf)
 	draw(fdf);
 }
 
-void    fdf_init(t_fdf *fdf)
+void	fdf_init(t_fdf *fdf)
 {
-    float	height;
+	float	height;
 	float	width;
 
+	fdf->z_shift = 0;
+	fdf->angle = 0.8;
+	fdf->color_flag = 1;
+	fdf->isometric_flag = 1;
+	fdf->shift_x = (WIDTH / 3) + 100;
+	fdf->shift_y = (HEIGHT / 3) - 50;
 	height = fdf->width * sin(fdf->angle) + fdf->height * cos(fdf->angle);
 	width = fdf->width * cos(fdf->angle) + fdf->height * sin(fdf->angle);
 	if (height < width)
@@ -33,17 +39,11 @@ void    fdf_init(t_fdf *fdf)
 	else
 		fdf->zoom = (WIDTH - 650) / width;
 	
-	fdf->shift_x = (WIDTH / 3) + 100;
-	fdf->shift_y = (HEIGHT / 3) - 50;
-	fdf->z_shift = 0;
-    fdf->angle = 0.8;
-	fdf->color_flag = 1;
-	fdf->isometric_flag = 1;
 }
 
-void    minilibx_init(t_fdf *fdf, char *win_name)
+void	minilibx_init(t_fdf *fdf, char *win_name)
 {
-    fdf->mlx_ptr = mlx_init();
+	fdf->mlx_ptr = mlx_init();
 	fdf->win_ptr = mlx_new_window(fdf->mlx_ptr, WIDTH, HEIGHT, win_name);
 	fdf->img.img = mlx_new_image(fdf->mlx_ptr, WIDTH, HEIGHT);
 	fdf->img.addr = mlx_get_data_addr(fdf->img.img, &fdf->img.bits_per_pixel, \
