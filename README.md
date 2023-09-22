@@ -6,6 +6,7 @@
 
 
 
+
 ## Features
 
 ### Current Features
@@ -16,7 +17,15 @@
 - `keys: A/D` 3D rotations 
 - `keys: W/S` move the z axis
 - `key: C` utilization of pretty color gradients, color change 
-- `key: T` top view 
+- `key: T` top view
+
+  
+
+| That's the spirit!                                                                           |                                                                                                  |
+|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+|![bmth](https://github.com/hheghine/FdF/assets/119530584/541797d0-50d9-455d-bfee-b3c660ab0c0e)| ![misfits](https://github.com/hheghine/FdF/assets/119530584/d6aec71d-f2e1-4fac-b3f1-418b0127c9b7)|
+
+
 
 ### Compatibility
 
