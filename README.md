@@ -20,11 +20,13 @@
 - `key: T` top view
 
   
-
-| That's the spirit!                                                                           |                                                                                                  |
+| 3D View                                                                                      |  Top View                                                                                        |
 |----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-|![bmth](https://github.com/hheghine/FdF/assets/119530584/541797d0-50d9-455d-bfee-b3c660ab0c0e)| ![misfits](https://github.com/hheghine/FdF/assets/119530584/d6aec71d-f2e1-4fac-b3f1-418b0127c9b7)|
+| ![3d](https://github.com/hheghine/FdF/assets/119530584/f6f1c0ab-b53d-4c66-863f-bfdde53e2935) | ![Top](https://github.com/hheghine/FdF/assets/119530584/7f055794-5c23-46f3-8b2a-17c579860042)    |
 
+| Z_UP                                                                                         | Z_DOWN                                                                                           |
+|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+|![z_up](https://github.com/hheghine/FdF/assets/119530584/c2dee0ab-7d70-463b-8032-e7eb4790adc6)|![z_down](https://github.com/hheghine/FdF/assets/119530584/df20f1e1-5cde-4130-80c0-bd1c1623cc30)  |
 
 
 ### Compatibility
@@ -43,13 +45,10 @@
 **FdF** is a straightforward 3D height-map renderer that allows users to visualize and interact with models. It offers rotation, camera control, color gradients, and various planned features to enhance the experience further. By compiling and running the program, you can explore the provided sample maps and create your own height-map visualizations.
 
 
-| 3D View                                                                                      |  Top View                                                                                        |
+| That's the spirit!                                                                           |                                                                                                  |
 |----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| ![3d](https://github.com/hheghine/FdF/assets/119530584/f6f1c0ab-b53d-4c66-863f-bfdde53e2935) | ![Top](https://github.com/hheghine/FdF/assets/119530584/7f055794-5c23-46f3-8b2a-17c579860042)    |
+|![bmth](https://github.com/hheghine/FdF/assets/119530584/541797d0-50d9-455d-bfee-b3c660ab0c0e)| ![misfits](https://github.com/hheghine/FdF/assets/119530584/d6aec71d-f2e1-4fac-b3f1-418b0127c9b7)|
 
-| Z_UP                                                                                         | Z_DOWN                                                                                           |
-|----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-|![z_up](https://github.com/hheghine/FdF/assets/119530584/c2dee0ab-7d70-463b-8032-e7eb4790adc6)|![z_down](https://github.com/hheghine/FdF/assets/119530584/df20f1e1-5cde-4130-80c0-bd1c1623cc30)  |
 
 
 ![Screenshot from 2023-09-16 05-45-08](https://github.com/hheghine/FdF/assets/119530584/b139951b-70fc-4487-9683-94fdacb403ae)
