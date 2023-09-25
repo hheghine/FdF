@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:20 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/25 20:10:42 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/25 23:21:56 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	destroy(t_fdf *fdf)
 int	main(int argc, char **argv)
 
 {
-	t_fdf		fdf;
+	t_fdf	fdf;
 
 	if (input_check(argc, argv[1]))
 		return (1);
@@ -32,6 +32,5 @@ int	main(int argc, char **argv)
 	image_init(&fdf);
 	mlx_hook(fdf.win_ptr, 2, 1l, key_hook, &fdf);
 	mlx_hook(fdf.win_ptr, 17, 1l << 15, destroy, &fdf);
-
 	mlx_loop(fdf.mlx_ptr);
 }

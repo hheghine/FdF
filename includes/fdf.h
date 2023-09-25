@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/25 20:03:27 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/25 22:57:21 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <mlx.h>
 # include <math.h>
+# include <stdint.h>
 # include "get_next_line.h"
 
 # define WIDTH 1200
@@ -114,21 +115,21 @@ typedef struct s_dots
 
 typedef struct s_fdf
 {
-	int		width;
-	int		height;
-	int		**matrix;
-	float	zoom;
-	int		color;
-	int		color_flag;
-	int		isometric_flag;
-	int		z_shift;
-	int		shift_x;
-	int		shift_y;
-	double	angle;
-	void	*mlx_ptr;
-	void	*win_ptr;
-	t_dots	dots;
-	t_data	img;
+	int				width;
+	int				height;
+	int				**matrix;
+	float			zoom;
+	uint64_t		color;
+	int				color_flag;
+	int				isometric_flag;
+	int				z_shift;
+	int				shift_x;
+	int				shift_y;
+	double			angle;
+	void			*mlx_ptr;
+	void			*win_ptr;
+	t_dots			dots;
+	t_data			img;
 }	t_fdf;
 
 //_________________________/fdf_error.c/_________________________//

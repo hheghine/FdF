@@ -6,16 +6,16 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:35:42 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/21 20:35:44 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/25 22:58:08 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-////////////////////////////////////////////////
-/* red=0x0000FF,green=0x008000,blue=0xFF0000 */
+///////////////////////////////////////////////
+// red=0x0000FF,green=0x00FF00,blue=0xFF0000 //
 //////////////////////////////////////////////
-int interpolate(int color1, int color2, float fraction)
+uint64_t interpolate(int color1, int color2, float fraction)
 {
 	t_rgb	rgb;
 
