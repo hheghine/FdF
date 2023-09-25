@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:33:40 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/21 20:33:42 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/25 23:26:59 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void    step_and_put_pixels(t_fdf *fdf, t_coordinates *xyz)
 
 	xyz->x_step = xyz->x1 - xyz->x;
 	xyz->y_step = xyz->y1 - xyz->y;
-	max = MAX(MOD(xyz->x_step), MOD(xyz->y_step));
+	max = ft_max(ft_mod(xyz->x_step), ft_mod(xyz->y_step));
 	xyz->x_step /= max;
 	xyz->y_step /= max;
 	while ((int)(xyz->x - xyz->x1) || (int)(xyz->y - xyz->y1))

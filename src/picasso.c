@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:35:42 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/25 22:58:08 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/25 23:27:27 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ void	picasso(t_fdf *fdf, t_coordinates *xyz)
 	if (fdf->isometric_flag > 0)
 	{
 		if (fdf->color_flag > 0)
-			fdf->color = interpolate(VIOLET, BLUE, MOD(xyz->y1 - xyz->y));
+			fdf->color = interpolate(VIOLET, BLUE, ft_mod(xyz->y1 - xyz->y));
 		else
-			fdf->color = interpolate(ROSE, VIOLET, MOD(xyz->y1 - xyz->y));
+			fdf->color = interpolate(ROSE, VIOLET, ft_mod(xyz->y1 - xyz->y));
 	}
 	else
 	{
 		if (fdf->color_flag > 0)
-			fdf->color = interpolate(VIOLET, GREEN, MOD(xyz->z1 - xyz->z));
+			fdf->color = interpolate(VIOLET, GREEN, ft_mod(xyz->z1 - xyz->z));
 		else
-			fdf->color = interpolate(ROSE, VIOLET, MOD(xyz->z1 - xyz->z));
+			fdf->color = interpolate(ROSE, VIOLET, ft_mod(xyz->z1 - xyz->z));
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/25 22:57:21 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/25 23:26:17 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,7 +160,7 @@ char	*ft_strrchr(const char *s, int c);
 int 	strcmp(const char *x, const char *y);
 int		ft_atoi(const char *str);
 //_________________________/fdf_utils2.c/_________________________//
-int		MAX(int a, int b);
-int		MOD(int a);
+int		ft_max(int a, int b);
+int		ft_mod(int a);
 
 #endif
