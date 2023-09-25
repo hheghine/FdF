@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/25 23:26:17 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/26 01:55:33 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,23 @@
 
 typedef struct	s_rgb
 {
-	unsigned char	r1;
-	unsigned char	r2;
-	unsigned char	g1;
-	unsigned char	g2;
-	unsigned char	b1;
-	unsigned char	b2;
+	uint8_t	r1;
+	uint8_t	r2;
+	uint8_t	g1;
+	uint8_t	g2;
+	uint8_t	b1;
+	uint8_t	b2;
 }	t_rgb;
+
+// typedef struct	s_rgb
+// {
+// 	unsigned char	r1;
+// 	unsigned char	r2;
+// 	unsigned char	g1;
+// 	unsigned char	g2;
+// 	unsigned char	b1;
+// 	unsigned char	b2;
+// }	t_rgb;
 
 typedef struct	s_data
 {
