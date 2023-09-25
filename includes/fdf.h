@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/21 20:33:03 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/25 20:03:27 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 # define WIDTH 1200
 # define HEIGHT 1000
 
-#define YELLOW 0x00FFFF66 
-#define BLUE 0x0099CCFF
-#define GREEN 0x0099FF33
-#define VIOLET 0x00CC99FF
-#define CYAN 0x0000FFFF
-#define ROSE 0x00FF00CC	
-#define DARKBLUE 0x006633CC
+# define YELLOW 0x00FFFF66 
+# define BLUE 0x0099CCFF
+# define GREEN 0x0099FF33
+# define VIOLET 0x00CC99FF
+# define CYAN 0x0000FFFF
+# define ROSE 0x00FF00CC	
+# define DARKBLUE 0x006633CC
 
 # ifdef __linux__
 #  define ESC 65307

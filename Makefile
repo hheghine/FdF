@@ -14,7 +14,7 @@ CFLAGS			= -Wall -Wextra -Werror #-fsanitize=address -g
 
 MINILIBX		= minilibx_macos
 
-FMS				= -framework OpenGL -framework AppKit
+FMS				= -framework OpenGL -framework AppKit -lmlx -lm 
 
 ifeq ($(shell uname -s), Linux)
 	MINILIBX = minilibx-linux
