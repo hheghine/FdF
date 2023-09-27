@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:34:15 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/27 21:13:49 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/28 00:21:06 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int	file_check(char *file)
 	buf2[i] = 0;
 	str = ft_strtrim(buf2, "\n ");
 	if (!str || !*str)
-		ft_error("Invalid file type\n");
+		ft_error("Invalid file\n");
+	free(buf2);
 	free(str);
 	if (i == 0)
 		return (1);
