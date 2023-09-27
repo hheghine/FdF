@@ -10,7 +10,7 @@ OBJS			= ${SRCS:.c=.o}
 
 INCS			= -I
 
-CFLAGS			= -Wall -Wextra -Werror #-fsanitize=address -g
+CFLAGS			= -Wall -Wextra -Werror -fsanitize=address -g
 
 MINILIBX		= minilibx_macos
 

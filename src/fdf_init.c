@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:34:24 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/21 20:34:26 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:41:35 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 	if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT)
 	{
-		dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-		*(unsigned int*)dst = color;
+		dst = data->addr + (y * data->line_length + \
+		x * (data->bits_per_pixel / 8));
+		*(unsigned int *)dst = color;
 	}
 }
 
@@ -50,7 +51,6 @@ void	fdf_init(t_fdf *fdf)
 		fdf->zoom = (HEIGHT - 650) / height;
 	else
 		fdf->zoom = (WIDTH - 650) / width;
-	
 }
 
 void	minilibx_init(t_fdf *fdf, char *win_name)

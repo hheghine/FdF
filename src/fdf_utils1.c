@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_utils.c                                        :+:      :+:    :+:   */
+/*   fdf_utils1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:34:43 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/21 20:34:44 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:42:38 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ char	*ft_strrchr(const char *s, int c)
 	return ((char *)last);
 }
 
-int strcmp(const char *x, const char *y)
+int	ft_strcmp(const char *x, const char *y)
 {
 	while (*x)
 	{
-		if (*x != *y) 
-			break;
+		if (*x != *y)
+			break ;
 		x++;
 		y++;
 	}
-	return *(const unsigned char*)x - *(const unsigned char*)y;
+	return (*(const unsigned char *)x - *(const unsigned char *)y);
 }
 
 int	ft_atoi(const char *str)

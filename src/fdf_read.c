@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:40:06 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/21 20:34:32 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/27 21:19:45 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	height_and_width(t_fdf *fdf, int fd, char **line, int *width)
 {
-	char	**tmp;	
+	char	**tmp;
 
 	*line = get_next_line(fd);
 	if (!*line || (fdf->width != 0 && fdf->width != *width))
@@ -57,18 +57,23 @@ int	actually_fill(t_fdf *fdf, int fd, char **line, int *i)
 {
 	char	**splitted;
 	int		j;
-	
+
 	*line = get_next_line(fd);
 	if (!*line)
 	{
 		free(*line);
 		return (1);
 	}
+	if (**line == '\n')
+		ft_error("Invalid file\n");
 	splitted = ft_split(*line, ' ');
 	free(*line);
 	j = -1;
 	while (++j < fdf->width)
+	{
+		// printf("elem: '%s'\n", splitted[j]);
 		fdf->matrix[*i][j] = ft_atoi(splitted[j]);
+	}
 	*i += 1;
 	to_free(splitted);
 	return (0);

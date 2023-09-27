@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:33:40 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/25 23:26:59 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:38:36 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	zoom_and_3d(t_fdf *fdf, t_coordinates *xyz)
 	}
 }
 
-void    step_and_put_pixels(t_fdf *fdf, t_coordinates *xyz)
+void	step_and_put_pixels(t_fdf *fdf, t_coordinates *xyz)
 {
-	int max;
+	int	max;
 
 	xyz->x_step = xyz->x1 - xyz->x;
 	xyz->y_step = xyz->y1 - xyz->y;

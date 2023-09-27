@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:08:14 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/26 01:55:33 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:55:35 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,10 +167,11 @@ void	picasso(t_fdf *fdf, t_coordinates *xyz);
 //_________________________/fdf_utils.c/_________________________//
 void	to_free(char **str);
 char	*ft_strrchr(const char *s, int c);
-int 	strcmp(const char *x, const char *y);
+int 	ft_strcmp(const char *x, const char *y);
 int		ft_atoi(const char *str);
 //_________________________/fdf_utils2.c/_________________________//
 int		ft_max(int a, int b);
 int		ft_mod(int a);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif

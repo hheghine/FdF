@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:33:54 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/09/21 20:33:56 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:39:14 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	color_and_view_control(t_fdf *fdf, int keycode)
 
 void	zoom_and_angle_control(t_fdf *fdf, int keycode)
 {
-	if (keycode == ZOOM_IN )
+	if (keycode == ZOOM_IN)
 		if (fdf->zoom <= 1000)
 			fdf->zoom += 0.2;
-	if (keycode == ZOOM_OUT )
+	if (keycode == ZOOM_OUT)
 		if (fdf->zoom >= 1)
 			fdf->zoom -= 0.2;
 	if (keycode == ANGLE_LEFT)
@@ -34,7 +34,7 @@ void	zoom_and_angle_control(t_fdf *fdf, int keycode)
 		fdf->angle += 0.05;
 }
 
-void    shift_control(t_fdf *fdf, int keycode)
+void	shift_control(t_fdf *fdf, int keycode)
 {
 	if (keycode == UP)
 		fdf->shift_y -= 10;
